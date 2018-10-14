@@ -1,0 +1,16 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+
+	if (hash_obj.user_id)
+		ul
+			each claim in claims
+				li(class='event')=claim.name
+					if (claim.pic_details && claim.pic_details[0])
+						img(src='/pics/'+claim.pic_details[0].name, class='app_image app_margin')
+					a(href="/api/checkin_confirmation?event_id="+claim.event_id+'&user_id='+claim.user_id class='app_button ajax')='Подтвердить'
+	else
+		div='нужно залогиниться'
+
+	include bottom_menu.pug

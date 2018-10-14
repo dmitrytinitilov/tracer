@@ -1,0 +1,7 @@
+include head.pug
+
+div(class="box")
+	div(class="talkbox")
+	form(action="/post_picture",method="POST",encType="multipart/form-data")
+		input(type="file" name="picture" class="app_input")
+		input(type="submit" class="app_submit" value="Загрузить картину")

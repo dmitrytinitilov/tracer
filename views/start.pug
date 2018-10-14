@@ -1,0 +1,12 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+	ul
+		each event in events
+			li(class='event')=event.name
+				if (event.details && event.details[0])
+					img(src='/pics/'+event.details[0].name, class='app_image app_margin')
+				a(href='/api/checkin_claim?event_id='+event._id, class='app_button ajax') зачекиниться
+
+	include bottom_menu.pug

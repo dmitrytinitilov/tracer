@@ -1,0 +1,9 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+	form(action='/api/register' method='POST')
+		input(type="text" placeholder="invite number" name="invite" class="app_input")
+		input(type="text" placeholder="login" name="login" class="app_input")
+		input(type="password" placeholder="password" name="password" class="app_input")
+		input(type="submit" value="submit" class="app_submit")

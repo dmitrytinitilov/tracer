@@ -1,0 +1,8 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+
+	ul
+		each checkin in checkins
+			li=checkin.event_id

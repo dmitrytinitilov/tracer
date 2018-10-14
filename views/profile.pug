@@ -1,0 +1,15 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+
+	if (hash_obj.user_id)
+		ul
+			each checkin in checkins
+				li(class='event')=checkin.name
+					if (checkin.pic_details && checkin.pic_details[0])
+						img(src='/pics/'+checkin.pic_details[0].name, class='app_image app_margin')
+	else
+		div='нужно залогиниться'
+
+	include bottom_menu.pug

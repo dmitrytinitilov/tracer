@@ -1,0 +1,14 @@
+include head.pug
+
+div(class="box")
+	include menu.pug
+
+	if (hash_obj.user_id)
+		div(class="talkbox")
+		form(action="/api/create_event",method="POST",encType="multipart/form-data")
+			input(type="text" name="name" class="app_input")
+			textarea(name="description" class="app_input")
+			input(type="file" name="picture" class="app_input")
+			input(type="submit" class="app_submit" value="Добавить событие")
+	else
+		div='нужно залогиниться'

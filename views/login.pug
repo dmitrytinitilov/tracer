@@ -1,0 +1,12 @@
+include head.pug
+
+
+div(class="box")
+	include menu.pug
+	
+	form(action='/api/login' method='POST')
+		input(type="text" placeholder="логин" name="login" autofocus="autofocus" class="app_input")
+		input(type="password" placeholder="пароль" name="password" class="app_input")
+		input(type="submit" value="submit" class="app_submit")
+
+	a(href="/registration")='регистрация'
